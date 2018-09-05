@@ -97,31 +97,64 @@ h1.document-title {
 .wiki-table-container {
   /* w600[tab] */
   width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
 }
-.wiki-table-container > table.wiki-table {
-  width: 100%;
+table.wiki-table {
   border: 2px solid #B38B6E;
   border-collapse: collapse;
   background-color: #f5f5f5;
 }
-.wiki-table-container > table.wiki-table td {
+table.wiki-table td {
   padding: 5px 10px;
   border: 1px solid #dddddd;
   text-align: center;
   white-space: pre-line;
 }
 /* 각 tr의 첫 번째 td에 해당 */
-.wiki-table-container > table.wiki-table tr > td:first-of-type {
+table.wiki-table tr > td:first-of-type {
   background-color: #B38B6E;
   color: white;
 }
 /* 테이블 중 첫 번째 tr(이미지에 해당) */
-.wiki-table-container > table.wiki-table tr:first-of-type > td {
+table.wiki-table tr:first-of-type > td {
   /* inherit
   새로 지정한 값이 있다면, 적용을 무시하고 
   부모로 부터 원래 상속받던 값 (또는 기본값)을 사용 */
   background-color: inherit;
   /* 이미지 아래의 공백을 없애기 위해 line-height조절 */
   line-height: 0;
+}
+
+.toc {
+  width: 400px;
+  border: 1px solid #ccc;
+  padding: 12px 20px 18px 0px;
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+.toc > h2 {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.toc > * {
+  margin: 0;
+}
+
+.content > .section > h2.section-title {
+  /* 제목 아래에 줄 긋기 */
+  border-bottom: 1px solid #CCC;
+  padding-bottom: 5px;
+}
+.content .wiki-table {
+  /* content영역에 있는 .wiki-table은 가운데 정렬되도록 설정 */
+  margin: auto;
+}
+
+blockquote {
+  border: 2px dashed #ccc;
+  background-color: #eee;
+  padding: 1em;
+  margin: 1em 0;
+  border-left: 5px solid #71bc6d;
+  white-space: pre-line;
 }
