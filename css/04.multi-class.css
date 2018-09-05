@@ -1,0 +1,8 @@
+/* css/04.multi-class.css */
+.section-title {
+  font-size: 20px;
+  color: red;
+}
+.section-title.second-title {
+  color: blue;
+}

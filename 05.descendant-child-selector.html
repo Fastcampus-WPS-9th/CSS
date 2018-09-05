@@ -1,0 +1,45 @@
+<!-- 05.descendant-child-selector.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .descendant ul, .child > ul {
+    border: 1px solid black;
+  }
+  </style>
+</head>
+<body>
+  <!-- section.descendant>h2{Section1 - Descendant}+ul>li{Chapter$}*2+li{Chapter3}>ul>li{SubChapter3-$}*2 -->
+  <section class="descendant">
+    <h2>Section1 - Descendant</h2>
+    <ul>
+      <li>Chapter1</li>
+      <li>Chapter2</li>
+      <li>Chapter3
+        <ul>
+          <li>SubChapter3-1</li>
+          <li>SubChapter3-2</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  
+  <section class="child">
+    <h2>Section2 - Child</h2>
+    <ul>
+      <li>Chapter1</li>
+      <li>Chapter2</li>
+      <li>Chapter3
+        <ul>
+          <li>SubChapter3-1</li>
+          <li>SubChapter3-2</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</body>
+</html>

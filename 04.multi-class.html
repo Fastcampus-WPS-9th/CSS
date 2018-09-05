@@ -1,0 +1,26 @@
+<!-- 04.multi-class.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 
+  css/04.multi-class.css파일을 사용해서
+  1. section-title클래스를 가진 요소에 font-size: 20px, color: red를 적용
+   -->
+  <link rel="stylesheet" href="css/04.multi-class.css">
+</head>
+<body>
+  <!-- (div.section>(p.section-title>lorem3)+(p.section-content>lorem10))*2 -->
+  <div class="section">
+    <p class="section-title">Lorem ipsum dolor.</p>
+    <p class="section-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, eligendi.</p>
+  </div>
+  <div class="section">
+    <p class="section-title second-title">Lorem ipsum dolor.</p>
+    <p class="section-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, nisi.</p>
+  </div>
+</body>
+</html>

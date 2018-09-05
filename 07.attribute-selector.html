@@ -1,0 +1,45 @@
+<!-- 07.attribute-selector.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* a {
+      display: block;
+      font-size: 18px;
+      color: black;
+    }
+    속성이 존재
+    a[href] {
+      color: blue;
+    } */
+    /* 일치 */
+    a[href="https://google.co.kr/"] {
+      color: green;
+    }
+    /* 시작 */
+    a[href^="https://www.fastcampus.co.kr/"] {
+      color: red;
+    }
+    /* 포함 */
+    a[href*=".com"] {
+      color: orange;
+    }
+    a[href*=".com"]:hover {
+      /* color: #ffff00;
+      color: rgb(255, 255, 0); */
+      color: rgba(255, 255, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <a>No href</a>
+  <a href="https://google.co.kr">Google</a>
+  <a href="https://www.fastcampus.co.kr/">Fast campus</a>
+  <a href="https://www.fastcampus.co.kr/category_dev_camp/">Fast campus CAMP</a>
+  <a href="https://www.facebook.com/">Facebook</a>
+</body>
+</html>
