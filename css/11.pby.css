@@ -1,0 +1,26 @@
+html, body {
+  /* 브라우저에 기본적으로 존재하는 패딩/마진 없앰 */
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 16px;
+}
+body {
+  /* 줄 간격/텍스트 색상/패딩 지정 */
+  /* rem: 가장 최상위 요소(html)의 font-size를 기준으로
+          현재 요소의 font-size를 계산 */
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #373a3c;
+  padding: 0 10px;
+}
+a {
+  /* anchor태그의 색상 변경, 밑줄 없앰 */
+  color: #0275d8;
+  text-decoration: none;
+}
+img {
+  /* 이미지는 최대크기가 부모 요소의 크기를 넘지 못하도록 함 */
+  max-width: 100%;
+}

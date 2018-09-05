@@ -1,0 +1,22 @@
+.bg {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  background-image: url('../images/pikachu.gif');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  /* 부모의 크기를 넘어가는 content에 대해서 overflow속성 지정 */
+  /* auto: 넘지않으면 그대로, 넘으면 스크롤바 생성 */
+  overflow: auto;
+  /* 각 항목별 구분 위해 아래 마진 추가 */
+  margin-bottom: 10px;
+}
+.bg1 {
+  background-attachment: local;
+}
+.bg2 {
+  background-attachment: scroll;
+}
+.bg3 {
+  background-attachment: fixed;
+}
