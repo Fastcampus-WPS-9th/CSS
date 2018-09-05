@@ -8,12 +8,14 @@ html {
 }
 body {
   /* 줄 간격/텍스트 색상/패딩 지정 */
-  /* rem: 가장 최상위 요소(html)의 font-size를 기준으로
-          현재 요소의 font-size를 계산 */
-  font-size: 0.9rem;
   line-height: 1.5;
   color: #373a3c;
   padding: 0 10px;
+}
+body, th, td, div, p, li {
+  /* rem: 가장 최상위 요소(html)의 font-size를 기준으로
+          현재 요소의 font-size를 계산 */
+  font-size: 0.9rem;
 }
 a {
   /* anchor태그의 색상 변경, 밑줄 없앰 */
@@ -44,13 +46,20 @@ ul.horizontal > li:last-of-type::after {
   /* display: none -> 요소를 HTML에서 제외시킴 */
   display: none;
 }
-
+.reference {
+  /* 참조링크 */
+  /* 우측위로 정렬되며, 글자크기를 줄임 */
+  vertical-align: super;
+  font-size: 0.6em;
+}
 
 /* 본문 */
+h1.document-title {
+  font-size: 2.2rem;
+}
 .date-modified {
   text-align: right;
 }
-
 .type {
   /* 테두리 넣고 가장자리 둥글게 */
   border: 1px solid #ccc;
@@ -58,10 +67,61 @@ ul.horizontal > li:last-of-type::after {
   /* 내부 여백 설정, 왼쪽 여백은 5px로 더 넓게 */
   padding: 3px;
   padding-left: 5px;
+  /* 아래 요소와의 마진 */
+  /* 부모의 font-size를 기준으로 1.0배 */
+  margin-bottom: 1em;
 }
-
 .type > ul {
   /* 수평으로 배치되지만, block요소와 같이 수직방향의 여백도 가질 수 있도록 설정 */
   display: inline-block;
 }
 
+.document-link > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.document-link > ul > li {
+  /* 각 리스트 아이템 간 아래 마진 */
+  margin-bottom: 1rem;
+}
+/* 리스트 아이템의 모든 자식요소 */
+.document-link > ul > li > * {
+  /* 자식요소(인라인 속성)들 간의 수직 정렬을 각 요소들의 '중앙'을 기준으로 함 */
+  vertical-align: middle;
+}
+.document-link img.arrow {
+  width: 21px;
+}
+
+.wiki-table-container {
+  /* w600[tab] */
+  width: 600px;
+  margin: 0 auto;
+}
+.wiki-table-container > table.wiki-table {
+  width: 100%;
+  border: 2px solid #B38B6E;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+}
+.wiki-table-container > table.wiki-table td {
+  padding: 5px 10px;
+  border: 1px solid #dddddd;
+  text-align: center;
+  white-space: pre-line;
+}
+/* 각 tr의 첫 번째 td에 해당 */
+.wiki-table-container > table.wiki-table tr > td:first-of-type {
+  background-color: #B38B6E;
+  color: white;
+}
+/* 테이블 중 첫 번째 tr(이미지에 해당) */
+.wiki-table-container > table.wiki-table tr:first-of-type > td {
+  /* inherit
+  새로 지정한 값이 있다면, 적용을 무시하고 
+  부모로 부터 원래 상속받던 값 (또는 기본값)을 사용 */
+  background-color: inherit;
+  /* 이미지 아래의 공백을 없애기 위해 line-height조절 */
+  line-height: 0;
+}
