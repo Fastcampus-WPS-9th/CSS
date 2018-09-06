@@ -1,0 +1,40 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+/* 수평배열 리스트에 대한 범용 클래스 */
+ul.horizontal {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+ul.horizontal > li {
+  float: left;
+}
+
+
+header.main-header {
+  height: 60px;
+  border-bottom: 1px solid #ccc;
+}
+/* 좌/우측 리스트들을 정렬 */
+header.main-header > nav > ul.left {
+  float: left;
+}
+header.main-header > nav > ul.right {
+  float: right;
+}
+/* 
+리스트 아이템 (li)의 자식 anchor요소는 줄높이를 전체 높이와 같게 설정,
+수직 중앙 정렬  */
+header.main-header > nav > ul > li > a {
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+}
+/* 리스트 아이템 > a내에 img간의 수직 정렬은 중앙 기준으로 함 */
+header.main-header > nav > ul > li > a > img {
+  vertical-align: middle;
+}
+
