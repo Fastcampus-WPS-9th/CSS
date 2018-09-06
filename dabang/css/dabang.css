@@ -37,6 +37,11 @@ header.main-header > nav ul > li > a {
 header.main-header > nav ul > li > a > img {
   vertical-align: middle;
 }
+/* 좌측 메뉴 아이템들의 여백 설정 */
+header.main-header > nav > .left > li:first-of-type {
+  margin-left: 15px;
+  margin-right: 15px;
+}
 /* 우측 메뉴가 가진 a요소에 대한 설정 */
 header.main-header > nav > .right > ul > li > a {
   color: #585858;
@@ -49,4 +54,11 @@ header.main-header > nav > .right > .room-list {
 }
 header.main-header > nav > .right > .auth-list {
   font-size: 12px;
+}
+
+
+/* 헤더에 포함되는 큰 배경이미지 & 검색 UI */
+.search-container {
+  height: 678px;
+  background-color: red;
 }
