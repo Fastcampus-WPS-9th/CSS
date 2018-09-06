@@ -1,0 +1,45 @@
+<!-- 16.vertical-middle.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box {
+      border: 1px solid black;
+    }
+    .margin0auto {
+      width: 300px;
+      height: 100px;
+      margin: 0 auto;
+    }
+    .tac {
+      text-align: center;
+    }
+    .span2 {
+      display: inline-block;
+      width: 30px;
+      height: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box margin0auto tac">
+    <span style="line-height: 100px;">ABCD</span>
+  </div>
+  
+  <div class="box margin0auto" style="position: relative;">
+    <span style="
+      white-space: pre-line;
+      background-color: red;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      ">ABCD
+    ASDF</span>
+  </div>
+</body>
+</html>

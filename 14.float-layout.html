@@ -1,0 +1,53 @@
+<!-- 14.float-layout.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  /* 
+    float인 자식들을 갖는 요소가 자식들의 height를 반영해서
+    자신의 height를 계산할 수 있도록 하는 범용 클래스
+     */
+    .clearfix::after {
+      content: '';
+      display: block;
+      height: 0;
+      clear: both;
+    }
+    .float-frame1, .float-frame2 {
+      width: 300px;
+      background-color: #eee;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    .float-unit {
+      width: 50px;
+      background-color: #333;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px 0;
+      margin-right: 5px;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="float-frame1 clearfix">
+    <div class="float-unit">A</div>
+    <div class="float-unit">B</div>
+    <div class="float-unit">C</div>
+    <div class="float-unit">D</div>
+  </div>
+  <div class="float-frame2 clearfix">
+    <div class="float-unit">A</div>
+    <div class="float-unit">B</div>
+    <div class="float-unit">C</div>
+    <div class="float-unit">D</div>
+  </div>
+</body>
+</html>
