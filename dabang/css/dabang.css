@@ -3,17 +3,17 @@ html, body {
   margin: 0;
   font-size: 13px;
 }
-/* 수평배열 리스트에 대한 범용 클래스 */
-ul.horizontal {
+/* 자식들을 수평배열할 요소에 대한 범용 클래스 */
+.horizontal {
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
-ul.horizontal > li {
+.horizontal > * {
   float: left;
 }
 
-
+/* 메인 헤더 */
 header.main-header {
   height: 60px;
   border-bottom: 1px solid #ccc;
@@ -22,19 +22,31 @@ header.main-header {
 header.main-header > nav > ul.left {
   float: left;
 }
-header.main-header > nav > ul.right {
+header.main-header > nav > .right {
   float: right;
 }
+
 /* 
-리스트 아이템 (li)의 자식 anchor요소는 줄높이를 전체 높이와 같게 설정,
-수직 중앙 정렬  */
-header.main-header > nav > ul > li > a {
+메인헤더의 nav의 모든 '하위' ul들에 대해, 
+li가 가진 a와 img에 대해 설정 */
+header.main-header > nav ul > li > a {
   display: inline-block;
   height: 60px;
   line-height: 60px;
 }
-/* 리스트 아이템 > a내에 img간의 수직 정렬은 중앙 기준으로 함 */
-header.main-header > nav > ul > li > a > img {
+header.main-header > nav ul > li > a > img {
   vertical-align: middle;
 }
-
+/* 우측 메뉴가 가진 a요소에 대한 설정 */
+header.main-header > nav > .right > ul > li > a {
+  color: #585858;
+  text-decoration: none;
+  padding: 0 3px;
+  margin: 0 7px;
+}
+header.main-header > nav > .right > .room-list {
+  font-size: 14px;
+}
+header.main-header > nav > .right > .auth-list {
+  font-size: 12px;
+}
