@@ -5,7 +5,6 @@ html, body {
   font-size: 13px;
 }
 
-/* 자식들을 수평배열할 요소에 대한 범용 클래스 */
 .horizontal {
   padding: 0;
   margin: 0;
@@ -14,6 +13,12 @@ html, body {
 
 .horizontal > * {
   float: left;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 header.main-header {
@@ -57,4 +62,60 @@ header.main-header > nav ul > li > a {
 
 header.main-header > nav ul > li > a > img {
   vertical-align: middle;
+}
+
+/* 헤더에 포함되는 큰 배경이미지 & 검색 UI */
+.search-container {
+  position: relative;
+  height: 678px;
+  background-image: url("../images/main_search_bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #ebe6e0;
+}
+
+.search-container > .input-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 110px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.search-container > .input-bg > form {
+  width: 534px;
+  margin: 30px auto 0;
+}
+
+.search-container > .input-bg > form > * {
+  float: left;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.search-container > .input-bg > form > input {
+  width: 434px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  line-height: 50px;
+}
+
+.search-container > .input-bg > form > button {
+  width: 100px;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  font-size: 15px;
+  color: white;
+  background-color: #3b8de0;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.search-container > .input-bg > form > button:hover {
+  background-color: #2074c8;
 }

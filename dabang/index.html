@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="css/dabang.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="wrap">
     <header class="main-header">
-      <nav>
+      <nav class="clearfix">
         <!-- 
         메뉴를 수평 배치시킬때는 display: inline-block대신
         'float'속성을 사용
@@ -42,8 +42,33 @@
           position
             absolute
          -->
+         <div class="input-bg">
+           <form action="" class="clearfix">
+             <input type="text" placeholder="관심지역 또는 매물번호를 검색해보세요">
+             <button type="submit">방 검색</button>
+           </form>
+         </div>
       </div>
     </header>
+    
+    <section class="theme-search">
+      <h2>테마 검색</h2>
+      <p>다방의 다양한 검색조건으로 방을 찾아보세요.</p>
+      <ul>
+        <!-- 
+          position: absolute;
+          
+          요소의 크기 변경
+          transform: scale(); 
+        -->
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </section>
   </div>
 </body>
 </html>

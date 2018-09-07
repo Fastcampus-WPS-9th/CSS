@@ -1,10 +1,26 @@
+// 색상들
+$color-right-menu-anchor: #585858;
+$color-bg-search-container: #ebe6e0;
+$color-bg-search-button: #3b8de0;
+$color-bg-search-button-hover: #2074c8;
+
+// 메인 배경이미지 및 검색 UI를 포함하는 부분의 높이
+$height-search-container: 678px;
+
+// 검색 UI관련 변수
+$height-search-form-bg: 110px;
+$height-search-form-elements: 50px;
+$margin-top-search-form: ($height-search-form-bg - $height-search-form-elements) / 2;
+$width-search-form-input: 434px;
+$width-search-form-button: 100px;
+
 // dabang/scss/style.scss
 html, body {
   padding: 0;
   margin: 0;
   font-size: 13px;
 }
-/* 자식들을 수평배열할 요소에 대한 범용 클래스 */
+// 자식들을 수평배열할 요소에 대한 범용 클래스
 .horizontal {
   padding: 0;
   margin: 0;
@@ -13,6 +29,14 @@ html, body {
   > * {
     float: left;
   }
+}
+// 특정요소의 마지막 자식요소를 가상선택자로 추가
+// clear: both;속성을 사용해서 자식이 모두 float속성을 가질 때,
+// 부모(.clearfix가 정의된 요소)의 높이를 유지시킴
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 
@@ -35,7 +59,7 @@ header.main-header {
     > .right {
       float: right;
       > ul > li > a {
-        color: #585858;
+        color: $color-right-menu-anchor;
         text-decoration: none;
         padding: 0 3px;
         margin: 0 7px;
@@ -55,6 +79,60 @@ header.main-header {
       
       > img {
         vertical-align: middle;
+      }
+    }
+  }
+}
+
+/* 헤더에 포함되는 큰 배경이미지 & 검색 UI */
+.search-container {
+  position: relative;
+  height: $height-search-container;
+  background-image: url('../images/main_search_bg.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $color-bg-search-container;
+  
+  > .input-bg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: $height-search-form-bg;
+    background-color: rgba(0,0,0,0.6);
+    
+    > form {
+      width: $width-search-form-input + $width-search-form-button;
+      margin: $margin-top-search-form auto 0;
+      
+      > * {
+        float: left;
+        height: $height-search-form-elements;
+        box-sizing: border-box;
+      }
+      > input {
+        width: $width-search-form-input;
+        padding: 0 20px;
+        border: none;
+        border-radius: 3px 0 0 3px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        font-size: 14px;
+        line-height: $height-search-form-elements;
+      }
+      > button {
+        width: $width-search-form-button;
+        border: none;
+        border-radius: 0 3px 3px 0;
+        font-size: 15px;
+        color: white;
+        background-color: $color-bg-search-button;
+        cursor: pointer;
+        transition-duration: 0.5s;
+        
+        &:hover {
+          background-color: $color-bg-search-button-hover;
+        }
       }
     }
   }
