@@ -1,0 +1,61 @@
+// dabang/scss/style.scss
+html, body {
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+/* 자식들을 수평배열할 요소에 대한 범용 클래스 */
+.horizontal {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  
+  > * {
+    float: left;
+  }
+}
+
+
+header.main-header {
+  height: 60px;
+  border-bottom: 1px solid #ccc;
+  
+  > nav {
+    // 왼쪽 메뉴
+    > ul.left {
+      float: left;
+      > li:first-of-type {
+        margin: {
+          left: 15px;
+          right: 15px;
+        }
+      }
+    }
+    // 오른쪽 메뉴
+    > .right {
+      float: right;
+      > ul > li > a {
+        color: #585858;
+        text-decoration: none;
+        padding: 0 3px;
+        margin: 0 7px;
+      }
+      > .room-list {
+        font-size: 14px;
+      }
+      > .auth-list {
+        font-size: 12px;
+      }
+    }
+    // 메인헤더의 nav의 모든 '하위' ul > li > a들
+    ul > li > a {
+      display: inline-block;
+      height: 60px;
+      line-height: 60px;
+      
+      > img {
+        vertical-align: middle;
+      }
+    }
+  }
+}
