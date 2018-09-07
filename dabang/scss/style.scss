@@ -41,10 +41,8 @@ html, body {
 
 
 header.main-header {
-  height: 60px;
-  border-bottom: 1px solid #ccc;
-  
   > nav {
+    border-bottom: 1px solid #ccc;
     // 왼쪽 메뉴
     > ul.left {
       float: left;
@@ -132,6 +130,92 @@ header.main-header {
         
         &:hover {
           background-color: $color-bg-search-button-hover;
+        }
+      }
+    }
+  }
+}
+
+section.theme-search {
+  // 가로크기 고정 및 가운데 정렬
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  
+  // 제목, 섹션 설명의 글자크기 조정
+  h2 {
+    font-size: 36px;
+    margin-bottom: 5px;
+  }
+  p.title-description {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+  
+  > ul {
+    // 리스트 기본 스타일 없앰
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    
+    > li {
+      position: relative;
+      // 각 리스트 아이템을 수평정렬
+      float: left;
+      width: 300px;
+      height: 300px;
+      // border: 1px solid black;
+      box-sizing: border-box;
+      // 각 아이템이 300px, 마진은 30px (각 요소가 330px의 너비)
+      margin-right: 30px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      // 자식요소가 부모크기를 초과할경우 가림
+      overflow: hidden;
+      
+      // 3n번째 (3, 6, 9...)의 아이템은 오른쪽 마진을 없앰
+      // 3개의 아이템이 총 960px (330 + 330 + 300)의 너비를 가짐
+      &:nth-of-type(3n) {
+        margin-right: 0;
+      }
+      // li의 hover이벤트
+      &:hover {
+        // .bg 자식의 크기를 1.2배로 키움
+        > .bg {
+          transform: scale(1.2);
+        }
+      }
+      
+      // li의 모든 자식요소들(.bg, .mask, .typo)은
+      // left, top각각 0 기준으로 부모에게 겹치도록 배열
+      & > * {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      // ul > li > .bg.pet
+      & > .bg {
+        transition-duration: 0.3s;
+        &.pet {
+          background-image: url('../images/pet.jpg');
+        }
+      }
+      // ul > li > .mask
+      & > .mask {
+        background-color: #2a2a2a;
+        opacity: .4;
+      }
+      & > .typo {
+        color: white;
+        height: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        
+        & > hr {
+          width: 46px;
         }
       }
     }

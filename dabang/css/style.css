@@ -21,8 +21,7 @@ html, body {
   clear: both;
 }
 
-header.main-header {
-  height: 60px;
+header.main-header > nav {
   border-bottom: 1px solid #ccc;
 }
 
@@ -118,4 +117,79 @@ header.main-header > nav ul > li > a > img {
 
 .search-container > .input-bg > form > button:hover {
   background-color: #2074c8;
+}
+
+section.theme-search {
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+section.theme-search h2 {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+section.theme-search p.title-description {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+section.theme-search > ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+section.theme-search > ul > li {
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 300px;
+  box-sizing: border-box;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+section.theme-search > ul > li:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+section.theme-search > ul > li:hover > .bg {
+  transform: scale(1.2);
+}
+
+section.theme-search > ul > li > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+section.theme-search > ul > li > .bg {
+  transition-duration: 0.3s;
+}
+
+section.theme-search > ul > li > .bg.pet {
+  background-image: url("../images/pet.jpg");
+}
+
+section.theme-search > ul > li > .mask {
+  background-color: #2a2a2a;
+  opacity: .4;
+}
+
+section.theme-search > ul > li > .typo {
+  color: white;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+section.theme-search > ul > li > .typo > hr {
+  width: 46px;
 }
